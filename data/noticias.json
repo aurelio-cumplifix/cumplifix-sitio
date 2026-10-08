@@ -1,0 +1,50 @@
+{
+  "_instrucciones": "Agrega notas reales con su fuente y liga. Se muestran las 6 más recientes. Borra 'pendiente': true en cada nota real. 'visibleHasta' (AAAA-MM-DD HH:MM) es opcional: la nota se oculta después de esa fecha.",
+  "notas": [
+    {
+      "publicar": true,
+      "fecha": "2026-10-07",
+      "fuente": "DOF · CONDUSEF",
+      "titulo": "CONDUSEF suspende términos en Baja California Sur",
+      "resumen": "Suspensión de términos y de atención presencial en la Unidad Occidente 2 los días 28 y 29 de septiembre. Revisa si afecta el cómputo de tus plazos.",
+      "liga": "https://dof.gob.mx/nota_detalle.php?codigo=5800553&fecha=07/10/2026",
+      "visibleHasta": ""
+    },
+    {
+      "publicar": true,
+      "fecha": "2026-10-07",
+      "fuente": "DOF · CONDUSEF",
+      "titulo": "CONDUSEF suspende términos en Sonora",
+      "resumen": "Suspensión de términos y de atención presencial en la Unidad Norte 1 el 29 de septiembre. Revisa si afecta el cómputo de tus plazos.",
+      "liga": "https://dof.gob.mx/nota_detalle.php?codigo=5800554&fecha=07/10/2026",
+      "visibleHasta": ""
+    },
+    {
+      "publicar": true,
+      "fecha": "2026-10-07",
+      "fuente": "CNBV",
+      "titulo": "Convocatoria CNBV-006-2026: vacantes en la CNBV",
+      "resumen": "Puestos en supervisión financiera, análisis de información, autorizaciones y asuntos jurídicos. Registro de aspirantes del 7 al 20 de octubre en Trabajaen.",
+      "liga": "https://www.trabajaen.gob.mx",
+      "visibleHasta": "2026-10-20 23:59"
+    },
+    {
+      "publicar": true,
+      "fecha": "2026-10-07",
+      "fuente": "El CEO",
+      "titulo": "SOFIPOs: la liquidez del 10% cambia por un Coeficiente de Cobertura de Liquidez",
+      "resumen": "Según la nota, el nuevo coeficiente impulsado por la CNBV sustituirá el requisito de liquidez del 10% de pasivos de corto plazo y se aplicará gradualmente a partir de 2028.",
+      "liga": "https://elceo.com/negocios/nuevas-reglas-para-sofipos-dan-ventaja-a-klar-y-stori-frente-a-las-tradicionales/",
+      "visibleHasta": ""
+    },
+    {
+      "publicar": true,
+      "fecha": "2026-10-06",
+      "fuente": "El CEO",
+      "titulo": "Diputados aprueban la Ley de Economía Digital para Pagos Digitales y Electrónicos",
+      "resumen": "El dictamen pasó al Senado y aún no está vigente. Las obligaciones y plazos dependerán del texto final que se publique en el DOF.",
+      "liga": "https://elceo.com/politica/mexico-se-aparta-mas-del-efectivo-diputados-aprueban-reforma-de-ley-de-economia-digital/",
+      "visibleHasta": ""
+    }
+  ]
+}

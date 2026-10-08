@@ -1,0 +1,29 @@
+{
+  "_instrucciones": "Este archivo se generará solo desde la hoja 'Contenido cumplifix.com' (pestaña Eventos). Fecha AAAA-MM-DD y hora HH:MM en hora del centro de México. 'visibleHasta' es opcional (AAAA-MM-DD HH:MM): si se deja vacío, el evento desaparece 30 minutos después de empezar.",
+  "eventos": [
+    {
+      "publicar": true,
+      "fecha": "2026-10-08",
+      "hora": "09:00",
+      "organizador": "ANIFE",
+      "evento": "Comité de Cumplimiento Normativo de ANIFE",
+      "tema": "Novedades regulatorias en Banco de México: trámites en el MAE, reforma al CAT y cumplimiento en transparencia (2ª parte)",
+      "expositor": "Aurelio Castro González, Fundador y Director General de CUMPLIFIX, S.C.",
+      "liga": "https://coordempmx.webex.com/weblink/register/r415ada62acf531fc717cf9cd117f9a75",
+      "imagen": "",
+      "visibleHasta": ""
+    },
+    {
+      "publicar": true,
+      "fecha": "2026-10-08",
+      "hora": "10:00",
+      "organizador": "ASONOC",
+      "evento": "Webinar ASONOC, A.C.",
+      "tema": "Antes de que toquen la puerta: lo que la CONDUSEF está revisando hoy en las instituciones financieras y cómo prepararte en 30 días",
+      "expositor": "Aurelio Castro y equipo de CUMPLIFIX, S.C. · Moderan Alondra de la Garza y Elimelec Moreno",
+      "liga": "https://us06web.zoom.us/meeting/register/mEdELIk5SPm3wamTh-gaTA",
+      "imagen": "",
+      "visibleHasta": "2026-10-08 10:30"
+    }
+  ]
+}
