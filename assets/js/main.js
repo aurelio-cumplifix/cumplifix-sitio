@@ -82,7 +82,9 @@ if (form) {
       nombre: d.nombre, institucion: d.institucion, correo: d.correo, telefono: d.telefono || "—",
       tema: d.tema, mensaje: d.mensaje || "—",
       origen: origenActual, ...UTM,
-      aviso_privacidad: "aceptado", sello_temporal: new Date().toISOString(),
+      aviso_privacidad: "aceptado",
+      finalidad_secundaria: d.no_publicidad ? "NO acepta publicidad (negativa)" : "Sin negativa",
+      sello_temporal: new Date().toISOString(),
       botcheck: false,
     };
     btn.disabled = true; status.textContent = "Enviando…";

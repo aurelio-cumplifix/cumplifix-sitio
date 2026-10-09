@@ -497,6 +497,11 @@ a { color: inherit; text-underline-offset: 0.2em; }
 .consent input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--accent-text); }
 .consent a { color: var(--accent-text); }
 .consent.is-invalid span { color: var(--err); }
+.aviso-corto { font-size: .8125rem; color: var(--ink-2); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+.aviso-corto summary { cursor: pointer; font-weight: 600; color: var(--accent-text); font-size: .875rem; }
+.aviso-corto p { margin: 10px 0 0; line-height: 1.55; }
+.aviso-corto a { color: var(--accent-text); }
+.aviso-corto .aviso-fecha { opacity: .75; }
 .form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 4px; }
 .form .btn[disabled] { opacity: .6; pointer-events: none; }
 .form-status { font-size: .9375rem; font-weight: 600; }

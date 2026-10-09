@@ -21,7 +21,7 @@
   <link rel="canonical" href="https://cumplifix.com/">
   <link rel="preload" href="assets/fonts/raleway-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=20261008b">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261008c">
   <script src="assets/js/boot.js?v=20261008b"></script>
 </head>
 <body>
@@ -473,7 +473,17 @@
           <div class="field"><label for="f-correo">Correo</label><input id="f-correo" name="correo" type="email" autocomplete="email" maxlength="160" required></div>
           <div class="field"><label for="f-tel">Teléfono <span class="opt">(opcional)</span></label><input id="f-tel" name="telefono" type="tel" autocomplete="tel" maxlength="30"></div>
           <div class="field field-wide"><label for="f-msg">¿En qué te ayudamos?</label><textarea id="f-msg" name="mensaje" rows="3" maxlength="2000" required></textarea></div>
-          <label class="consent field-wide"><input type="checkbox" name="aviso" required aria-invalid="false"> <span>He leído el <a href="aviso-de-privacidad.html">Aviso de Privacidad</a> y acepto el tratamiento de mis datos para ser contactado.</span></label>
+          <details class="aviso-corto field-wide">
+            <summary>Aviso de Privacidad Simplificado</summary>
+            <p>CUMPLIFIX, S.C., con domicilio en Dr. Barragán No. 743, interior 307, Colonia Narvarte, C.P. 03020, Benito Juárez, Ciudad de México, es el responsable del tratamiento y protección de sus datos personales.</p>
+            <p><b>¿Para qué utilizaremos sus datos personales?</b> Para las siguientes finalidades primarias, necesarias para atender y prestar los servicios solicitados: verificar y confirmar su identidad; atender sus solicitudes de información, consultas, dudas o cotizaciones sobre nuestros servicios de consultoría normativo-regulatoria; elaborar propuestas comerciales, contratos y la facturación correspondiente, y dar cumplimiento a las obligaciones legales derivadas de la contratación de nuestros servicios.</p>
+            <p>De manera adicional, utilizaremos su información para una finalidad secundaria, que no es necesaria para el servicio solicitado pero nos permite brindarle una mejor atención: el envío de publicidad, boletines informativos, promociones y ofertas comerciales sobre los servicios de CUMPLIFIX, S.C.</p>
+            <p><b>Negativa para finalidades secundarias.</b> Si no desea que sus datos se traten para esa finalidad, marque la casilla de abajo. También puede manifestarlo en cualquier momento escribiendo a <a href="mailto:info@cumplifix.com">info@cumplifix.com</a>.</p>
+            <p><b>Aviso de Privacidad Integral.</b> Las transferencias, el procedimiento para ejercer sus derechos ARCO (acceso, rectificación, cancelación u oposición) y la revocación del consentimiento se detallan en el <a href="aviso-de-privacidad.html">Aviso de Privacidad Integral</a>.</p>
+            <p class="aviso-fecha">Última actualización: 8 de octubre de 2026.</p>
+          </details>
+          <label class="consent field-wide"><input type="checkbox" name="no_publicidad" value="si"> <span><b>NO</b> acepto que mis datos personales se utilicen para el envío de publicidad, promociones o mercadotecnia (finalidad secundaria).</span></label>
+          <label class="consent field-wide"><input type="checkbox" name="aviso" required aria-invalid="false"> <span>He leído el Aviso de Privacidad <a href="aviso-de-privacidad.html">Integral</a> y Simplificado, y acepto el tratamiento de mis datos para ser contactado.</span></label>
           <div class="form-foot field-wide">
             <button class="btn" type="submit">Agenda 20 minutos</button>
             <p class="form-status" role="status" aria-live="polite"></p>
@@ -527,6 +537,6 @@
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="assets/js/main.js?v=20261008b" defer></script>
+  <script src="assets/js/main.js?v=20261008c" defer></script>
 </body>
 </html>
