@@ -893,3 +893,5 @@ a { color: inherit; text-underline-offset: 0.2em; }
 .sp-faq .faq-list { margin-top: 32px; }
 .sp-cta .sp-ctas { margin-top: 32px; }
 .svc-link { display: inline-block; margin-top: 10px; font-weight: 600; color: var(--accent-text); }
+.sp-grid > li.sp-watch { grid-column: 1 / -1; }
+.sp-year { margin-top: 20px; height: 64px; border-radius: 12px; background-image: radial-gradient(circle, var(--accent-text) 2.2px, transparent 2.6px); background-size: 12px 12px; opacity: .55; -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent); mask-image: linear-gradient(90deg, #000 70%, transparent); }
