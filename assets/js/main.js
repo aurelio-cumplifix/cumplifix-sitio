@@ -554,7 +554,7 @@ setInterval(() => proximoCheck.forEach((fn) => fn()), 60000);
       if (pop.dataset.id === enVentana.id) return;
       pop.dataset.id = enVentana.id;
       pop.querySelector("[data-jpop-when]").textContent = cuandoDe(enVentana.inicio);
-      pop.querySelector("[data-jpop-title]").textContent = enVentana.organizador === "ANIFE" ? "Jueves CUMPLIFIX, S.C. con ANIFE" : (enVentana.organizador ? `Evento con ${enVentana.organizador}` : "Próximo evento");
+      pop.querySelector("[data-jpop-title]").textContent = enVentana.organizador ? `Próximo evento con ${enVentana.organizador}` : "Próximo evento";
       pop.querySelector("[data-jpop-topic]").textContent = enVentana.tema;
       pop.querySelector("[data-jpop-by]").textContent = enVentana.expositor || "";
       pop.querySelector("[data-jpop-link]").href = enVentana.liga;
