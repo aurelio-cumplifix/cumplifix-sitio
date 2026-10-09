@@ -2,37 +2,14 @@
   "_instrucciones": "Se generará desde la hoja 'Contenido cumplifix.com' (pestaña Cursos). El curso deja de mostrarse en cuanto empieza (primera hora del horario, o al terminar el día si no hay hora). 'visibleHasta' (AAAA-MM-DD HH:MM) es opcional para cambiar ese momento, por ejemplo para cerrar inscripciones antes.",
   "cursos": [
     {
-      "pendiente": true,
-      "titulo": "[PENDIENTE] Nombre del curso",
-      "fecha": "2026-10-20",
-      "horario": "[PENDIENTE] 10:00 a 13:00 h",
-      "modalidad": "[PENDIENTE] En línea",
-      "precio": "[PENDIENTE]",
-      "inscripcion": "",
-      "visibleHasta": "",
-      "publicar": false
-    },
-    {
-      "pendiente": true,
-      "titulo": "[PENDIENTE] Nombre del curso",
-      "fecha": "2026-11-05",
-      "horario": "[PENDIENTE]",
-      "modalidad": "[PENDIENTE] Presencial · CDMX",
-      "precio": "[PENDIENTE]",
-      "inscripcion": "",
-      "visibleHasta": "",
-      "publicar": false
-    },
-    {
-      "pendiente": true,
-      "titulo": "[PENDIENTE] Nombre del curso",
-      "fecha": "2026-11-19",
-      "horario": "[PENDIENTE]",
-      "modalidad": "[PENDIENTE]",
-      "precio": "[PENDIENTE]",
-      "inscripcion": "",
-      "visibleHasta": "",
-      "publicar": false
+      "publicar": true,
+      "fecha": "2026-10-28",
+      "horario": "10:00 a 13:00 h",
+      "modalidad": "En línea por Zoom",
+      "titulo": "Taller 7 · Comisión observada, comisión que no cobras: registra tus comisiones en el RECO a la primera",
+      "precio": "$3,200 + IVA",
+      "inscripcion": "https://forms.gle/krBB59zrk4XLbhYg8",
+      "visibleHasta": ""
     }
   ]
 }

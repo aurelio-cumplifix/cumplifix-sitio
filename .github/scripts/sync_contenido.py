@@ -243,6 +243,12 @@ def main():
             continue
         ruta = os.path.join(DATA, archivo)
         actual = json.load(open(ruta, encoding="utf-8"))
+        if llave == "eventos":
+            # Si la hoja no trae flyer, conserva el que ya se había subido al sitio para ese evento.
+            previas = {(e.get("fecha"), e.get("hora"), e.get("organizador")): e.get("imagen", "") for e in actual.get("eventos", [])}
+            for e in items:
+                if not e["imagen"]:
+                    e["imagen"] = previas.get((e["fecha"], e["hora"], e["organizador"]), "")
         nuevo = {"_instrucciones": actual.get("_instrucciones", ""), llave: items}
         if nuevo != actual:
             with open(ruta, "w", encoding="utf-8") as f:
