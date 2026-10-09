@@ -898,3 +898,9 @@ a { color: inherit; text-underline-offset: 0.2em; }
 .sp-dl dd b { display: block; color: var(--fg); font-weight: 600; margin-bottom: 4px; }
 .sp-fr { display: block; margin-top: 6px; font-size: .8125rem; font-weight: 600; color: var(--accent-text); }
 @media (max-width: 600px) { .sp-dl > div { grid-template-columns: 1fr; gap: 6px; } }
+.sp-grid-even > li:first-child { grid-column: auto; }
+.sp-steps { list-style: none; counter-reset: paso; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.sp-steps li { counter-increment: paso; background: var(--surface); border-radius: 22px; padding: 28px; box-shadow: 0 1px 2px rgba(11,20,48,.05), 0 10px 30px -18px rgba(11,20,48,.25); }
+.sp-steps li::before { content: counter(paso, decimal-leading-zero); display: block; font: 800 1rem/1 var(--display); color: var(--accent-text); margin-bottom: 14px; }
+.sp-steps h3 { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.015em; }
+.sp-steps p { margin-top: 8px; color: var(--ink-2); }
