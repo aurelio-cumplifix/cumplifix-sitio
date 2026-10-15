@@ -81,7 +81,7 @@
   </script>
   <link rel="preload" href="assets/fonts/raleway-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=20261009a">
+  <link rel="stylesheet" href="assets/css/main.css?v=20261015b">
   <script src="assets/js/boot.js?v=20261008b"></script>
 </head>
 <body>
@@ -95,14 +95,14 @@
       </a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú" data-menu><span></span></button>
       <nav class="nav-links" id="nav-links" aria-label="Principal">
-        <a href="#servicios">Servicios</a>
-        <a href="#academia">Academia</a>
-        <a href="#eventos">Eventos</a>
-        <a href="#equipo">Nosotros</a>
-        <a href="#preguntas">Preguntas</a>
+        <a href="#servicios" data-chapter="servicios">Servicios</a>
+        <a href="#recursos" data-chapter="recursos">Recursos gratis</a>
+        <a href="#academia" data-chapter="academia">Academia</a>
+        <a href="#equipo" data-chapter="equipo">Nosotros</a>
+        <a href="#contacto" data-chapter="contacto">Contacto</a>
       </nav>
       <button class="theme-btn" type="button" data-theme-toggle aria-label="Cambiar a modo oscuro"><span aria-hidden="true"></span></button>
-      <a class="btn btn-sm" href="#contacto" data-origen="nav">Agenda 20 min</a>
+      <a class="btn btn-sm" href="#contacto" data-origen="nav" aria-label="Agenda 20 minutos">Agenda 20<span class="cta-long">&nbsp;minutos</span><span class="cta-short">&nbsp;min</span></a>
     </div>
   </header>
 
@@ -116,7 +116,7 @@
       </h1>
       <p class="hero-sub" data-rise>Revisamos, dictaminamos, capacitamos y te acompañamos para que tu institución cumpla a tiempo y corrija antes de que lo pida la autoridad.</p>
       <div class="hero-actions" data-rise>
-        <a class="btn" href="#contacto" data-origen="hero">Agenda 20 minutos con un especialista</a>
+        <a class="btn" href="#contacto" data-origen="hero">Agenda 20 minutos</a>
         <a class="btn btn-ghost" href="#servicios">Conoce nuestros servicios</a>
       </div>
       <ul class="hero-proof" data-rise aria-label="Por qué confiar en nosotros">
@@ -124,6 +124,8 @@
         <li><b>25 años</b> de experiencia conjunta</li>
         <li><b>+10</b> servicios para instituciones financieras</li>
       </ul>
+      <p class="hero-sectors" data-rise><b>Atendemos a</b> SOFOM · SOFIPO · SOCAP · Uniones de crédito · Fintech (IFPE e IFC) · Aseguradoras · Bancos</p>
+      <p class="hero-allies" data-rise><b>Aliados</b> ANIFE · ASOFOM · AFICO · UNIFIMEX · ASONOC · PROMEFIN México · <a href="#equipo">Quiénes somos</a></p>
     </section>
 
     <!-- EL PANEL QUE SE EXPANDE -->
@@ -189,7 +191,7 @@
           <div class="scard-body">
             <p class="scard-claim">Simulamos la visita y revisamos tus últimos ejercicios para detectar lo que una revisión podría observar, y corregirlo primero.</p>
             <ul class="chips"><li>SIMULAFIX</li><li>Checkup CUMPLIFIX, S.C.</li></ul>
-            <div class="scard-ctas"><a class="btn" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20SIMULAFIX%20y%20el%20Checkup%20CUMPLIFIX%2C%20S.C." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a><a class="btn btn-ghost" href="#contacto" data-tema="SIMULAFIX y Checkup" data-origen="ruta">Agenda 20 minutos</a></div>
+            <div class="scard-ctas"><a class="btn" href="#contacto" data-tema="SIMULAFIX y Checkup" data-origen="ruta">Agenda 20 minutos</a><a class="btn btn-ghost" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20SIMULAFIX%20y%20el%20Checkup%20CUMPLIFIX%2C%20S.C." target="_blank" rel="noopener" data-wa-fixed>Escríbenos por WhatsApp</a></div>
           </div>
         </article>
         <article class="scard t-ink" id="ruta-requerimiento" data-scard>
@@ -199,7 +201,7 @@
           <div class="scard-body">
             <p class="scard-claim">Los plazos corren desde la notificación. Revisamos el oficio, reunimos la evidencia y corregimos lo que lo originó, para que tu respuesta llegue completa y a tiempo. Si hace falta, te representamos ante la autoridad.</p>
             <ul class="chips"><li>Revisión del oficio</li><li>Plan de corrección</li><li>CumpliLex</li></ul>
-            <div class="scard-ctas"><a class="btn btn-light" href="https://wa.me/525571462367?text=Hola%2C%20recib%C3%AD%20un%20requerimiento%20o%20programa%20de%20cumplimiento%20forzoso%20y%20necesito%20atenci%C3%B3n%20urgente." target="_blank" rel="noopener" data-wa-fixed>Atención urgente por WhatsApp</a><a class="btn btn-ghost-dark" href="#contacto" data-tema="Requerimiento o programa de cumplimiento forzoso" data-origen="ruta">Prefiero que me llamen</a></div>
+            <div class="scard-ctas"><a class="btn btn-light" href="https://wa.me/525571462367?text=Hola%2C%20recib%C3%AD%20un%20requerimiento%20o%20programa%20de%20cumplimiento%20forzoso%20y%20necesito%20atenci%C3%B3n%20urgente." target="_blank" rel="noopener" data-wa-fixed>Atención urgente por WhatsApp</a><a class="btn btn-ghost-dark" href="#contacto" data-tema="Requerimiento o programa de cumplimiento forzoso" data-origen="ruta">Agenda 20 minutos</a></div>
           </div>
         </article>
         <article class="scard t-sky" id="ruta-sofom" data-scard>
@@ -209,7 +211,7 @@
           <div class="scard-body">
             <p class="scard-claim">Te acompañamos en la constitución, los registros ante la CONDUSEF, los manuales y los contratos para que inicies operaciones conforme a la normativa.</p>
             <ul class="chips"><li>CUMPLIFIX, S.C. Incuba</li></ul>
-            <div class="scard-ctas"><a class="btn btn-dark" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20constituir%20una%20SOFOM%20y%20saber%20m%C3%A1s%20sobre%20CUMPLIFIX%2C%20S.C.%20Incuba." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a><a class="btn btn-ghost" href="#contacto" data-tema="CUMPLIFIX, S.C. Incuba" data-origen="ruta">Agenda 20 minutos</a></div>
+            <div class="scard-ctas"><a class="btn btn-dark" href="#contacto" data-tema="CUMPLIFIX, S.C. Incuba" data-origen="ruta">Agenda 20 minutos</a><a class="btn btn-ghost" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20constituir%20una%20SOFOM%20y%20saber%20m%C3%A1s%20sobre%20CUMPLIFIX%2C%20S.C.%20Incuba." target="_blank" rel="noopener" data-wa-fixed>Escríbenos por WhatsApp</a></div>
           </div>
         </article>
         <article class="scard t-royal" id="ruta-contratos" data-scard>
@@ -219,7 +221,7 @@
           <div class="scard-body">
             <p class="scard-claim">Evaluamos contratos de adhesión, carátulas, estados de cuenta, publicidad y sitio web contra la normativa de transparencia, y te entregamos las correcciones.</p>
             <ul class="chips"><li>EVALUAFIX</li></ul>
-            <div class="scard-ctas"><a class="btn btn-light" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20EVALUAFIX%20para%20revisar%20contratos%2C%20car%C3%A1tulas%20y%20publicidad." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a><a class="btn btn-ghost-dark" href="#contacto" data-tema="EVALUAFIX" data-origen="ruta">Agenda 20 minutos</a></div>
+            <div class="scard-ctas"><a class="btn btn-light" href="#contacto" data-tema="EVALUAFIX" data-origen="ruta">Agenda 20 minutos</a><a class="btn btn-ghost-dark" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20EVALUAFIX%20para%20revisar%20contratos%2C%20car%C3%A1tulas%20y%20publicidad." target="_blank" rel="noopener" data-wa-fixed>Escríbenos por WhatsApp</a></div>
           </div>
         </article>
       </div>
@@ -231,58 +233,59 @@
         <h2 id="svc-title" class="sec-title" data-rise>Un servicio para cada momento de tu cumplimiento.</h2>
         <p class="sec-sub" data-rise>De la constitución a la defensa ante la autoridad. Asesoría, dictámenes, revisión, capacitación y acompañamiento.</p>
       </header>
-      <ul class="svc-rows">
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Nacer</span>
-          <div class="svc-main"><h3>CUMPLIFIX, S.C. Incuba</h3><p>Acompañamiento desde cero para constituir y poner en marcha tu SOFOM, E.N.R.: estatutos, registro en SIPRES, contratos, RECA y RECO, dictamen técnico y manual PLD/FT.</p></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20CUMPLIFIX%2C%20S.C.%20Incuba." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Diagnosticar</span>
-          <div class="svc-main"><h3>Checkup CUMPLIFIX, S.C.</h3><p>Revisamos tus obligaciones de los últimos cinco años para encontrar incumplimientos históricos antes que la autoridad. Entregamos matriz de hallazgos con semáforo de riesgo y plan de corrección priorizado.</p><a class="svc-link" href="servicios/checkup/">Conoce el Checkup CUMPLIFIX, S.C. →</a></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20Checkup%20CUMPLIFIX%2C%20S.C." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Prevenir</span>
-          <div class="svc-main"><h3>EVALUAFIX</h3><p>Que todos tus documentos digan lo mismo: contrato y anexos, carátula, CAT y comisiones contra el RECO, estados de cuenta, web y publicidad, congruentes con lo inscrito en el RECA. Dictamen con fundamento y redacción propuesta; 15 días hábiles por producto, como referencia.</p></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20EVALUAFIX." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Prevenir</span>
-          <div class="svc-main"><h3>Auditorías preventivas y Compliance Docs</h3><p>Revisiones puntuales de sitio web, publicidad, avisos de privacidad y registro de marca. Contratos de adhesión (RECA y RPCA de la Profeco), manual de publicidad, políticas y manuales alineados a cómo opera tu institución.</p></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Auditor%C3%ADas%20preventivas%20y%20Compliance%20Docs." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Ensayar</span>
-          <div class="svc-main"><h3>SIMULAFIX</h3><p>Simulacro completo de una visita de supervisión de la CONDUSEF, en sitio o a distancia: requerimiento simulado, revisión de expedientes, dictamen de hallazgos y plan de corrección. 20 días hábiles, como referencia.</p><a class="svc-link" href="servicios/simulafix/">Conoce SIMULAFIX →</a></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20SIMULAFIX." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Operar</span>
-          <div class="svc-main"><h3>CUMPLIFIX, S.C. 360</h3><p>Nos hacemos cargo de las obligaciones del día a día ante la CONDUSEF: te acompañamos en la validación mensual de SIPRES, REUNE, RECO, REDECO, IFIT y REUS, monitoreamos tus notificaciones todo el año, nos encargamos de altas, bajas y cambios, y apoyamos a tu UNE y a tu Oficial de Cumplimiento. Cada validación queda respaldada con acuse y evidencia.</p><a class="svc-link" href="servicios/cumplifix-360/">Conoce CUMPLIFIX, S.C. 360 →</a></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20CUMPLIFIX%2C%20S.C.%20360." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Operar</span>
-          <div class="svc-main"><h3>Registro y trámites en el MAE de Banxico</h3><p>Te ayudamos a registrar a tus Representantes Calificados y operadores en el Módulo de Atención Electrónica (MAE), por donde van tus solicitudes y la atención de requerimientos del Banco de México, cuyos plazos corren aunque nadie lo consulte. Incluye el formato del escrito y una guía rápida.</p></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Registro%20y%20tr%C3%A1mites%20en%20el%20MAE%20de%20Banxico." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Operar</span>
-          <div class="svc-main"><h3>PLD/FT y actividades vulnerables</h3><p>Manual de Cumplimiento y dictamen técnico, actas del Oficial y del Comité, auditoría externa anual, dictaminación de operaciones, capacitación anual y preparación para la certificación de Oficiales ante la CNBV. También para actividades vulnerables (LFPIORPI).</p></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20PLD/FT%20y%20actividades%20vulnerables." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Corregir</span>
-          <div class="svc-main"><h3>CumpliLex</h3><p>Desahogo de requerimientos y observaciones, programas de cumplimiento forzoso y procedimientos de sanción ante la CONDUSEF, la CNBV y el Banco de México, con argumentos técnicos.</p></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20CumpliLex." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-        <li class="svc-row" data-rise>
-          <span class="svc-verb">Formar</span>
-          <div class="svc-main"><h3>Master UNE</h3><p>Capacitación para tu Unidad Especializada: qué se reporta al REUNE y al REDECO, cuándo, con qué fundamento y cómo se acredita.</p></div>
-          <a class="svc-more" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Master%20UNE." target="_blank" rel="noopener" data-wa-fixed>Quiero saber más</a>
-        </li>
-      </ul>
+      <div class="svc-groups" data-rise>
+        <details class="svc-group">
+          <summary><h3 class="svc-g-name">Nacer<span>Para constituir e iniciar operaciones</span></h3><span class="svc-g-list">CUMPLIFIX, S.C. Incuba</span></summary>
+          <ul class="svc-rows">
+            <li class="svc-row">
+              <div class="svc-main"><h4>CUMPLIFIX, S.C. Incuba</h4><p>Acompañamiento desde cero para constituir y poner en marcha tu SOFOM, E.N.R.: estatutos, registro en SIPRES, contratos, RECA y RECO, dictamen técnico y manual PLD/FT.</p><a class="svc-link" href="#contacto" data-tema="CUMPLIFIX, S.C. Incuba" data-origen="servicios">Pregunta por CUMPLIFIX, S.C. Incuba →</a></div>
+            </li>
+          </ul>
+        </details>
+        <details class="svc-group" open>
+          <summary><h3 class="svc-g-name">Prevenir<span>Diagnosticar, revisar y ensayar antes que la autoridad</span></h3><span class="svc-g-list">Checkup CUMPLIFIX, S.C. · EVALUAFIX · Auditorías preventivas y Compliance Docs · SIMULAFIX</span></summary>
+          <ul class="svc-rows">
+            <li class="svc-row">
+              <div class="svc-main"><h4>Checkup CUMPLIFIX, S.C.</h4><p>Revisamos tus obligaciones de los últimos cinco años para encontrar incumplimientos históricos antes que la autoridad. Entregamos matriz de hallazgos con semáforo de riesgo y plan de corrección priorizado.</p><a class="svc-link" href="servicios/checkup/">Conoce Checkup CUMPLIFIX, S.C. →</a></div>
+            </li>
+            <li class="svc-row">
+              <div class="svc-main"><h4>EVALUAFIX</h4><p>Que todos tus documentos digan lo mismo: contrato y anexos, carátula, CAT y comisiones contra el RECO, estados de cuenta, web y publicidad, congruentes con lo inscrito en el RECA. Dictamen con fundamento y redacción propuesta; 15 días hábiles por producto, como referencia.</p><a class="svc-link" href="#contacto" data-tema="EVALUAFIX" data-origen="servicios">Pregunta por EVALUAFIX →</a></div>
+            </li>
+            <li class="svc-row">
+              <div class="svc-main"><h4>Auditorías preventivas y Compliance Docs</h4><p>Revisiones puntuales de sitio web, publicidad, avisos de privacidad y registro de marca. Contratos de adhesión (RECA y RPCA de la Profeco), manual de publicidad, políticas y manuales alineados a cómo opera tu institución.</p><a class="svc-link" href="#contacto" data-tema="Auditorías preventivas y Compliance Docs" data-origen="servicios">Pregunta por Auditorías preventivas y Compliance Docs →</a></div>
+            </li>
+            <li class="svc-row">
+              <div class="svc-main"><h4>SIMULAFIX</h4><p>Simulacro completo de una visita de supervisión de la CONDUSEF, en sitio o a distancia: requerimiento simulado, revisión de expedientes, dictamen de hallazgos y plan de corrección. 20 días hábiles, como referencia.</p><a class="svc-link" href="servicios/simulafix/">Conoce SIMULAFIX →</a></div>
+            </li>
+          </ul>
+        </details>
+        <details class="svc-group">
+          <summary><h3 class="svc-g-name">Operar<span>Las obligaciones de todos los meses</span></h3><span class="svc-g-list">CUMPLIFIX, S.C. 360 · Registro y trámites en el MAE de Banxico · PLD/FT y actividades vulnerables</span></summary>
+          <ul class="svc-rows">
+            <li class="svc-row">
+              <div class="svc-main"><h4>CUMPLIFIX, S.C. 360</h4><p>Nos hacemos cargo de las obligaciones del día a día ante la CONDUSEF: te acompañamos en la validación mensual de SIPRES, REUNE, RECO, REDECO, IFIT y REUS, monitoreamos tus notificaciones todo el año, nos encargamos de altas, bajas y cambios, y apoyamos a tu UNE y a tu Oficial de Cumplimiento. Cada validación queda respaldada con acuse y evidencia.</p><a class="svc-link" href="servicios/cumplifix-360/">Conoce CUMPLIFIX, S.C. 360 →</a></div>
+            </li>
+            <li class="svc-row">
+              <div class="svc-main"><h4>Registro y trámites en el MAE de Banxico</h4><p>Te ayudamos a registrar a tus Representantes Calificados y operadores en el Módulo de Atención Electrónica (MAE), por donde van tus solicitudes y la atención de requerimientos del Banco de México, cuyos plazos corren aunque nadie lo consulte. Incluye el formato del escrito y una guía rápida.</p><a class="svc-link" href="#contacto" data-tema="Registro y trámites en el MAE de Banxico" data-origen="servicios">Pregunta por Registro y trámites en el MAE de Banxico →</a></div>
+            </li>
+            <li class="svc-row">
+              <div class="svc-main"><h4>PLD/FT y actividades vulnerables</h4><p>Manual de Cumplimiento y dictamen técnico, actas del Oficial y del Comité, auditoría externa anual, dictaminación de operaciones, capacitación anual y preparación para la certificación de Oficiales ante la CNBV. También para actividades vulnerables (LFPIORPI).</p><a class="svc-link" href="#contacto" data-tema="PLD/FT y actividades vulnerables" data-origen="servicios">Pregunta por PLD/FT y actividades vulnerables →</a></div>
+            </li>
+          </ul>
+        </details>
+        <details class="svc-group">
+          <summary><h3 class="svc-g-name">Corregir y formar<span>Cuando ya llegó la autoridad, y para tu equipo</span></h3><span class="svc-g-list">CumpliLex · Master UNE</span></summary>
+          <ul class="svc-rows">
+            <li class="svc-row">
+              <div class="svc-main"><h4>CumpliLex</h4><p>Desahogo de requerimientos y observaciones, programas de cumplimiento forzoso y procedimientos de sanción ante la CONDUSEF, la CNBV y el Banco de México, con argumentos técnicos.</p><a class="svc-link" href="#contacto" data-tema="CumpliLex" data-origen="servicios">Pregunta por CumpliLex →</a></div>
+            </li>
+            <li class="svc-row">
+              <div class="svc-main"><h4>Master UNE</h4><p>Capacitación para tu Unidad Especializada: qué se reporta al REUNE y al REDECO, cuándo, con qué fundamento y cómo se acredita.</p><a class="svc-link" href="#contacto" data-tema="Master UNE" data-origen="servicios">Pregunta por Master UNE →</a></div>
+            </li>
+          </ul>
+        </details>
+      </div>
+      <div class="sec-ctas" data-rise><a class="btn" href="#contacto" data-origen="servicios">Agenda 20 minutos</a><a class="btn btn-ghost" href="https://wa.me/525571462367?text=Hola%2C%20vengo%20de%20cumplifix.com%20y%20quiero%20saber%20qu%C3%A9%20servicio%20le%20conviene%20a%20mi%20instituci%C3%B3n." target="_blank" rel="noopener" data-wa-fixed>Escríbenos por WhatsApp</a></div>
     </section>
 
     <!-- PUI -->
@@ -307,107 +310,11 @@
             </div>
           </div>
           <div class="pui-ctas">
-            <a class="btn btn-light" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20asesor%C3%ADa%20sobre%20las%20obligaciones%20de%20la%20Plataforma%20%C3%9Anica%20de%20Identidad%20%28PUI%29." target="_blank" rel="noopener" data-wa-fixed>Asesoría sobre la PUI</a>
-            <a class="btn btn-ghost-dark" href="https://pui.cumplifix.com/?utm_source=cumplifix.com&amp;utm_medium=web&amp;utm_campaign=pui" rel="noopener">Guía gratuita: simulador y checklist</a>
+            <a class="btn btn-light" href="#contacto" data-tema="Plataforma Única de Identidad (PUI)" data-origen="pui">Agenda 20 minutos</a>
+            <a class="btn btn-ghost-dark" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20asesor%C3%ADa%20sobre%20las%20obligaciones%20de%20la%20Plataforma%20%C3%9Anica%20de%20Identidad%20%28PUI%29." target="_blank" rel="noopener" data-wa-fixed>Escríbenos por WhatsApp</a>
           </div>
+          <p class="pui-free"><a href="https://pui.cumplifix.com/?utm_source=cumplifix.com&amp;utm_medium=web&amp;utm_campaign=pui" rel="noopener">Guía gratuita de la PUI: simulador y checklist de 28 puntos →</a></p>
         </div>
-      </div>
-    </section>
-
-    <!-- ACADEMIA -->
-    <section class="academy" id="academia" aria-labelledby="aca-title">
-      <header class="sec-head">
-        <h2 id="aca-title" class="sec-title" data-rise>Academia CUMPLIFIX, S.C.</h2>
-        <p class="sec-sub" data-rise>Cursos y talleres prácticos para oficiales de cumplimiento, UNE y áreas jurídicas.</p>
-      </header>
-      <ol class="courses" data-courses aria-live="polite">
-        <li class="course course-empty">Cargando próximos cursos…</li>
-      </ol>
-      <div class="formats" data-rise>
-        <div><h3>Talleres abiertos</h3><p>Sesiones en vivo de tres horas, con casos prácticos y entregables listos para usar: checklists, guías y matrices.</p></div>
-        <div><h3>Talleres a la medida</h3><p>Los mismos temas, aterrizados a tus productos y tus documentos.</p></div>
-        <div><h3>EduFix</h3><p>Programas de educación financiera para tus usuarios, alineados a las disposiciones aplicables.</p></div>
-      </div>
-      <div class="program" data-rise>
-        <h3 class="program-title">Programa de talleres</h3>
-        <ul class="program-list">
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20Prep%C3%A1rate%20para%20la%20nueva%20Circular%20del%20CAT." target="_blank" rel="noopener" data-wa-fixed>Prepárate para la nueva Circular del CAT</a></li>
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20IDATU%3A%20de%20calificaci%C3%B3n%20p%C3%BAblica%20a%20herramienta%20de%20control." target="_blank" rel="noopener" data-wa-fixed>IDATU: de calificación pública a herramienta de control</a></li>
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20Contratos%20de%20adhesi%C3%B3n%20que%20resisten%20una%20revisi%C3%B3n." target="_blank" rel="noopener" data-wa-fixed>Contratos de adhesión que resisten una revisión</a></li>
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20Estados%20de%20cuenta%20y%20comprobantes%20de%20operaci%C3%B3n." target="_blank" rel="noopener" data-wa-fixed>Estados de cuenta y comprobantes de operación</a></li>
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20Publicidad%20financiera%3A%20c%C3%B3mo%20reducir%20riesgos." target="_blank" rel="noopener" data-wa-fixed>Publicidad financiera: cómo reducir riesgos</a></li>
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20UNE%20y%20gesti%C3%B3n%20de%20consultas%2C%20reclamaciones%20y%20aclaraciones." target="_blank" rel="noopener" data-wa-fixed>UNE y gestión de consultas, reclamaciones y aclaraciones</a></li>
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20Master%20UNE%3A%20c%C3%B3mo%20reportar%20al%20REUNE%20y%20al%20REDECO." target="_blank" rel="noopener" data-wa-fixed>Master UNE: cómo reportar al REUNE y al REDECO</a></li>
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20Congruencia%20o%20rechazo%3A%20comisiones%20en%20el%20RECO." target="_blank" rel="noopener" data-wa-fixed>Congruencia o rechazo: comisiones en el RECO</a></li>
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20Lo%20que%20tu%20p%C3%A1gina%20de%20internet%20debe%20incluir." target="_blank" rel="noopener" data-wa-fixed>Lo que tu página de internet debe incluir</a></li>
-          <li><a href="https://wa.me/525571462367?text=Hola%2C%20me%20interesa%20el%20taller%3A%20Sanciones%20y%20multas%3A%20c%C3%B3mo%20prevenirlas%20y%20defenderte." target="_blank" rel="noopener" data-wa-fixed>Sanciones y multas: cómo prevenirlas y defenderte</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PRÓXIMOS EVENTOS -->
-    <section class="jueves" id="eventos" aria-labelledby="jueves-title">
-      <div class="jueves-grid">
-        <div>
-          <h2 id="jueves-title" class="jueves-title">Próximos eventos <span>Webinars y charlas sin costo</span></h2>
-          <p class="jueves-sub">Hablamos de lo que está cambiando en la regulación y de cómo aplicarlo, de la mano de asociaciones del sector: cada jueves a las 9:00 h (centro de México) con ANIFE, y en sesiones con ASONOC y otras asociaciones e instituciones.</p>
-          <a class="btn btn-light" href="#" data-jueves-link target="_blank" rel="noopener" hidden>Regístrate al próximo evento</a>
-        </div>
-        <div class="events-col">
-          <article class="jueves-next" data-jueves aria-live="polite">
-            <p class="jn-when">Próximo evento</p>
-            <h3 class="jn-topic">Cargando…</h3>
-          </article>
-          <ul class="events-more" data-events-more></ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- NOTICIAS -->
-    <section class="news" id="noticias" aria-labelledby="news-title">
-      <header class="sec-head">
-        <h2 id="news-title" class="sec-title" data-rise>Lo último en el sistema financiero</h2>
-        <p class="sec-sub" data-rise>Cambios regulatorios y criterios de supervisión, en dos líneas.</p>
-      </header>
-      <ul class="news-list" data-news aria-live="polite"></ul>
-    </section>
-
-    <!-- RECURSOS GRATUITOS -->
-    <section class="tools" id="herramientas" aria-labelledby="tools-title">
-      <header class="sec-head">
-        <h2 id="tools-title" class="sec-title" data-rise>Recursos gratuitos</h2>
-        <p class="sec-sub" data-rise>Para consultar cada semana. Sin costo y sin crear cuenta.</p>
-      </header>
-      <ul class="tools-list">
-        <li data-rise>
-          <a href="https://agenda.cumplifix.com/?utm_source=cumplifix.com&amp;utm_medium=web&amp;utm_campaign=recursos" rel="noopener">
-            <span class="tool-k">Calendario regulatorio 2026</span>
-            <span class="tool-d">Qué vence este mes, cuántos días hábiles quedan y el fundamento de cada obligación, filtrado por sector.</span>
-            <span class="tool-go" aria-hidden="true">→</span>
-          </a>
-        </li>
-        <li data-rise>
-          <a href="recursos/multas-condusef/">
-            <span class="tool-k">Guía de multas de la CONDUSEF</span>
-            <span class="tool-d">Rangos en UMA por conducta y por registro, calculadora en pesos según el año y checklist preventivo.</span>
-            <span class="tool-go" aria-hidden="true">→</span>
-          </a>
-        </li>
-        <li data-rise>
-          <a href="https://agenda.cumplifix.com/?utm_source=cumplifix.com&amp;utm_medium=web&amp;utm_campaign=efemerides#descarga" rel="noopener">
-            <span class="tool-k">Efemérides del Cumplimiento</span>
-            <span class="tool-d">Cambios normativos, plazos y criterios de supervisión en formato breve, directo a tu correo.</span>
-            <span class="tool-go" aria-hidden="true">→</span>
-          </a>
-        </li>
-      </ul>
-      <div class="social" data-rise>
-        <p class="social-title">Síguenos y únete a la Red CUMPLIFIX, S.C.</p>
-        <ul class="social-links">
-          <li><a href="https://www.linkedin.com/in/cumplifix-cumplimiento-financiero-373a3933b/" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://www.facebook.com/524631634059173" rel="noopener">Facebook</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScCgcjU_SuPwckUzqtYeDw71TXQvBY4b-7y8-2gVvBJ-ZXTwQ/viewform" rel="noopener">Únete a la Red CUMPLIFIX, S.C.</a></li>
-        </ul>
       </div>
     </section>
 
@@ -464,6 +371,119 @@
         <li data-rise><b>Ejecución con evidencia</b><span>Cada entregable con fundamento y trazabilidad.</span></li>
         <li data-rise><b>Acompañamiento</b><span>Seguimos contigo ante la autoridad cuando llegue el momento.</span></li>
       </ol>
+    </section>
+
+    <!-- RECURSOS GRATUITOS -->
+    <section class="tools" id="recursos" aria-labelledby="tools-title">
+      <header class="sec-head">
+        <h2 id="tools-title" class="sec-title" data-rise>Recursos gratuitos</h2>
+        <p class="sec-sub" data-rise>Para consultar cada semana. Sin costo y sin crear cuenta.</p>
+      </header>
+      <ul class="tools-list" id="herramientas">
+        <li data-rise>
+          <a href="recursos/multas-condusef/">
+            <span class="tool-k">Guía de multas de la CONDUSEF</span>
+            <span class="tool-d">Rangos en UMA por conducta y por registro, calculadora en pesos según el año y checklist preventivo.</span>
+            <span class="tool-go" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li data-rise>
+          <a href="https://agenda.cumplifix.com/?utm_source=cumplifix.com&amp;utm_medium=web&amp;utm_campaign=diagnostico#diagnostico" rel="noopener">
+            <span class="tool-k">Diagnóstico en 3 minutos</span>
+            <span class="tool-d">¿Tu institución pasaría hoy una visita de la CONDUSEF? Responde y ve tus brechas principales, con su fundamento.</span>
+            <span class="tool-go" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li data-rise>
+          <a href="https://agenda.cumplifix.com/?utm_source=cumplifix.com&amp;utm_medium=web&amp;utm_campaign=recursos" rel="noopener">
+            <span class="tool-k">Calendario regulatorio 2026</span>
+            <span class="tool-d">Qué vence este mes, cuántos días hábiles quedan y el fundamento de cada obligación, filtrado por sector.</span>
+            <span class="tool-go" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li data-rise>
+          <a href="https://pui.cumplifix.com/?utm_source=cumplifix.com&amp;utm_medium=web&amp;utm_campaign=recursos" rel="noopener">
+            <span class="tool-k">Guía de la PUI: simulador y checklist</span>
+            <span class="tool-d">Cómo llega un reporte de búsqueda, qué contesta tu institución en cada fase y 28 puntos para saber dónde estás.</span>
+            <span class="tool-go" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li data-rise>
+          <a href="https://agenda.cumplifix.com/?utm_source=cumplifix.com&amp;utm_medium=web&amp;utm_campaign=efemerides#descarga" rel="noopener">
+            <span class="tool-k">Efemérides del Cumplimiento</span>
+            <span class="tool-d">Cambios normativos, plazos y criterios de supervisión en formato breve, directo a tu correo.</span>
+            <span class="tool-go" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+      <p class="tools-more" data-rise>También sin costo: <a href="#eventos">webinars con asociaciones del sector</a> y <a href="#noticias">noticias regulatorias</a>, aquí abajo.</p>
+      <div class="social" data-rise>
+        <p class="social-title">Síguenos y únete a la Red CUMPLIFIX, S.C.</p>
+        <ul class="social-links">
+          <li><a href="https://www.linkedin.com/in/cumplifix-cumplimiento-financiero-373a3933b/" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com/524631634059173" rel="noopener">Facebook</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScCgcjU_SuPwckUzqtYeDw71TXQvBY4b-7y8-2gVvBJ-ZXTwQ/viewform" rel="noopener">Únete a la Red CUMPLIFIX, S.C.</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PRÓXIMOS EVENTOS -->
+    <section class="jueves" id="eventos" aria-labelledby="jueves-title">
+      <div class="jueves-grid">
+        <div>
+          <h2 id="jueves-title" class="jueves-title">Próximos eventos <span>Webinars y charlas sin costo</span></h2>
+          <p class="jueves-sub">Hablamos de lo que está cambiando en la regulación y de cómo aplicarlo, de la mano de asociaciones del sector: cada jueves a las 9:00 h (centro de México) con ANIFE, y en sesiones con ASONOC y otras asociaciones e instituciones.</p>
+          <a class="btn btn-light" href="#" data-jueves-link target="_blank" rel="noopener" hidden>Regístrate al próximo evento</a>
+        </div>
+        <div class="events-col">
+          <article class="jueves-next" data-jueves aria-live="polite">
+            <p class="jn-when">Próximo evento</p>
+            <h3 class="jn-topic">Cargando…</h3>
+          </article>
+          <ul class="events-more" data-events-more></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTICIAS -->
+    <section class="news" id="noticias" aria-labelledby="news-title">
+      <header class="sec-head">
+        <h2 id="news-title" class="sec-title" data-rise>Lo último en el sistema financiero</h2>
+        <p class="sec-sub" data-rise>Cambios regulatorios y criterios de supervisión, en dos líneas.</p>
+      </header>
+      <ul class="news-list" data-news aria-live="polite"></ul>
+    </section>
+
+    <!-- ACADEMIA -->
+    <section class="academy" id="academia" aria-labelledby="aca-title">
+      <header class="sec-head">
+        <h2 id="aca-title" class="sec-title" data-rise>Academia CUMPLIFIX, S.C.</h2>
+        <p class="sec-sub" data-rise>Cursos y talleres prácticos para oficiales de cumplimiento, UNE y áreas jurídicas.</p>
+      </header>
+      <ol class="courses" data-courses aria-live="polite">
+        <li class="course course-empty">Cargando próximos cursos…</li>
+      </ol>
+      <div class="formats" data-rise>
+        <div><h3>Talleres abiertos</h3><p>Sesiones en vivo de tres horas, con casos prácticos y entregables listos para usar: checklists, guías y matrices.</p></div>
+        <div><h3>Talleres a la medida</h3><p>Los mismos temas, aterrizados a tus productos y tus documentos.</p></div>
+        <div><h3>EduFix</h3><p>Programas de educación financiera para tus usuarios, alineados a las disposiciones aplicables.</p></div>
+      </div>
+      <details class="program" data-rise>
+        <summary class="program-title">Ver los 10 talleres del programa</summary>
+        <ul class="program-list">
+          <li>Prepárate para la nueva Circular del CAT</li>
+          <li>IDATU: de calificación pública a herramienta de control</li>
+          <li>Contratos de adhesión que resisten una revisión</li>
+          <li>Estados de cuenta y comprobantes de operación</li>
+          <li>Publicidad financiera: cómo reducir riesgos</li>
+          <li>UNE y gestión de consultas, reclamaciones y aclaraciones</li>
+          <li>Master UNE: cómo reportar al REUNE y al REDECO</li>
+          <li>Congruencia o rechazo: comisiones en el RECO</li>
+          <li>Lo que tu página de internet debe incluir</li>
+          <li>Sanciones y multas: cómo prevenirlas y defenderte</li>
+        </ul>
+        <div class="sec-ctas"><a class="btn" href="#contacto" data-tema="Academia: talleres" data-origen="academia">Agenda 20 minutos</a><a class="btn btn-ghost" href="https://wa.me/525571462367?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20talleres%20de%20la%20Academia%20CUMPLIFIX%2C%20S.C." target="_blank" rel="noopener" data-wa-fixed>Escríbenos por WhatsApp</a></div>
+      </details>
     </section>
 
     <!-- PREGUNTAS FRECUENTES -->
@@ -551,7 +571,7 @@
           <label class="consent field-wide"><input type="checkbox" name="no_publicidad" value="si"> <span><b>NO</b> acepto que mis datos personales se utilicen para el envío de publicidad, promociones o mercadotecnia (finalidad secundaria).</span></label>
           <label class="consent field-wide"><input type="checkbox" name="aviso" required aria-invalid="false"> <span>He leído el Aviso de Privacidad <a href="aviso-de-privacidad.html">Integral</a> y Simplificado, y acepto el tratamiento de mis datos para ser contactado.</span></label>
           <div class="form-foot field-wide">
-            <button class="btn" type="submit">Agenda 20 minutos</button>
+            <button class="btn" type="submit">Enviar solicitud</button>
             <p class="form-status" role="status" aria-live="polite"></p>
           </div>
         </form>
@@ -561,7 +581,7 @@
 
   <!-- Barra fija en celular -->
   <nav class="mbar" data-mbar aria-label="Acciones rápidas" aria-hidden="true">
-    <a class="btn" href="#contacto" data-origen="barra-movil" tabindex="-1">Agenda 20 min</a>
+    <a class="btn" href="#contacto" data-origen="barra-movil" tabindex="-1" aria-label="Agenda 20 minutos">Agenda 20<span class="cta-long">&nbsp;minutos</span><span class="cta-short">&nbsp;min</span></a>
     <a class="mbar-wa" href="https://wa.me/525571462367?text=Hola%2C%20vengo%20de%20cumplifix.com%20y%20quiero%20platicar%20sobre%20el%20cumplimiento%20de%20mi%20instituci%C3%B3n." data-wa="barra-movil" tabindex="-1">WhatsApp</a>
   </nav>
 
@@ -570,16 +590,16 @@
     <svg aria-hidden="true" viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.66 15l-1.3 4.75 4.87-1.28A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-2.89.76.77-2.82-.2-.31A8.2 8.2 0 1 1 12 20.2Zm4.5-6.14c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.71-1.33.08-.16.04-.3-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.74 2.74 0 0 0-.86 2.04 4.76 4.76 0 0 0 1 2.53 10.9 10.9 0 0 0 4.18 3.69c1.56.67 2.17.73 2.95.61.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.17-.47-.29Z"/></svg>
   </a>
 
-  <!-- Aviso del próximo evento -->
-  <div class="jpop" data-jpop role="dialog" aria-modal="false" aria-labelledby="jpop-title" hidden>
-    <button class="jpop-x" type="button" data-jpop-close aria-label="Cerrar aviso">×</button>
-    <div class="jpop-img" data-jpop-img hidden></div>
-    <p class="jpop-when" data-jpop-when></p>
-    <h2 id="jpop-title" class="jpop-title" data-jpop-title>Próximo evento</h2>
-    <p class="jpop-topic" data-jpop-topic></p>
-    <p class="jpop-by" data-jpop-by></p>
-    <a class="btn" href="#" data-jpop-link target="_blank" rel="noopener">Regístrate al evento</a>
-  </div>
+  <!-- Aviso del próximo evento: banda bajo el menú -->
+  <aside class="evband" data-jpop aria-label="Próximo evento" hidden>
+    <div class="evband-inner">
+      <p class="evband-txt"><span class="evband-full"><b data-jpop-title>Próximo evento</b> <span data-jpop-when></span><span class="evband-topic" data-jpop-topic></span></span><b class="evband-short" data-jpop-short></b></p>
+      <a class="evband-go" href="#" data-jpop-link target="_blank" rel="noopener">Regístrate</a>
+      <button class="evband-x" type="button" data-jpop-close aria-label="Cerrar aviso del evento">×</button>
+    </div>
+  </aside>
+
+  <a class="totop" href="#inicio" data-totop aria-label="Volver arriba">↑</a>
 
   <footer class="foot">
     <p class="foot-mark" aria-hidden="true">CUMPLIFIX, S.C.</p>
@@ -603,6 +623,6 @@
   <script src="assets/vendor/gsap.min.js" defer></script>
   <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="assets/vendor/lenis.min.js" defer></script>
-  <script src="assets/js/main.js?v=20261008d" defer></script>
+  <script src="assets/js/main.js?v=20261015b" defer></script>
 </body>
 </html>

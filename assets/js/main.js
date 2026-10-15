@@ -178,7 +178,22 @@ function navApply(darkZones) {
     return r.top <= probe && r.bottom >= probe;
   });
   nav.classList.toggle("is-dark", dark);
+  // Capítulo actual en el menú
+  const mid = window.innerHeight * 0.4;
+  let actual = "";
+  for (const [cap, ids] of CAPITULOS) {
+    if (ids.some((id) => { const el = document.getElementById(id); if (!el) return false; const r = el.getBoundingClientRect(); return r.top <= mid && r.bottom >= mid; })) { actual = cap; break; }
+  }
+  navLinks.forEach((a) => {
+    const on = a.dataset.chapter === actual;
+    a.classList.toggle("is-active", on);
+    if (on) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current");
+  });
+  if (toTop) toTop.classList.toggle("is-on", y > window.innerHeight * 2);
 }
+const CAPITULOS = [["servicios", ["servicios", "pui"]], ["equipo", ["equipo", "como-trabajamos"]], ["recursos", ["recursos", "eventos", "noticias"]], ["academia", ["academia"]], ["contacto", ["contacto"]]];
+const navLinks = [...document.querySelectorAll(".nav-links a[data-chapter]")];
+const toTop = document.querySelector("[data-totop]");
 
 function init() {
   const darkZones = [...document.querySelectorAll(".stage, .after, .contact, .scard.t-ink, .scard.t-royal, .pui-card, .jueves")];
@@ -494,12 +509,24 @@ setInterval(() => proximoCheck.forEach((fn) => fn()), 60000);
     const top = notas.filter((n) => n.publicar !== false && !n.pendiente && /^\d{4}-\d{2}-\d{2}$/.test(n.fecha || "") && (!parseHasta(n.visibleHasta) || vigente(parseHasta(n.visibleHasta))))
       .sort((a, b) => b.fecha.localeCompare(a.fecha)).slice(0, 6);
     if (!top.length) { list.closest("section").hidden = true; return; }
-    list.innerHTML = top.map((n) => `<li class="news-item">
+    list.innerHTML = top.map((n, i) => `<li class="news-item${i >= 3 ? " is-extra" : ""}">
       <p class="news-meta">${fmtFecha(n.fecha, { day: "numeric", month: "short", year: "numeric" })} · ${pend(n.fuente)}</p>
       <h3>${pend(n.titulo)}</h3>
       <p>${pend(n.resumen)}</p>
       ${safeUrl(n.liga) ? `<a href="${esc(safeUrl(n.liga))}" target="_blank" rel="noopener">Leer más</a>` : ""}
     </li>`).join("");
+    if (top.length > 3) {
+      const sec = list.closest("section");
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "btn btn-ghost news-more"; b.textContent = `Ver ${top.length - 3} noticias más`;
+      b.setAttribute("aria-expanded", "false");
+      b.addEventListener("click", () => {
+        const abierto = sec.classList.toggle("show-all");
+        b.setAttribute("aria-expanded", abierto ? "true" : "false");
+        b.textContent = abierto ? "Ver menos" : `Ver ${top.length - 3} noticias más`;
+      });
+      list.after(b);
+    }
   }).catch(() => { list.closest("section").hidden = true; });
 })();
 
@@ -555,12 +582,11 @@ setInterval(() => proximoCheck.forEach((fn) => fn()), 60000);
       pop.dataset.id = enVentana.id;
       pop.querySelector("[data-jpop-when]").textContent = cuandoDe(enVentana.inicio);
       pop.querySelector("[data-jpop-title]").textContent = enVentana.organizador ? `Próximo evento con ${enVentana.organizador}` : "Próximo evento";
-      pop.querySelector("[data-jpop-topic]").textContent = enVentana.tema;
-      pop.querySelector("[data-jpop-by]").textContent = enVentana.expositor || "";
+      pop.querySelector("[data-jpop-topic]").textContent = enVentana.tema || "";
+      const corto = enVentana.inicio.toLocaleString("es-MX", { timeZone: "America/Mexico_City", weekday: "short", day: "numeric", month: "short", hour: "numeric", minute: "2-digit" });
+      pop.querySelector("[data-jpop-short]").textContent = `${enVentana.organizador || "Evento"} · ${corto}`;
       pop.querySelector("[data-jpop-link]").href = enVentana.liga;
-      const im = pop.querySelector("[data-jpop-img]");
-      if (enVentana.imagen) { im.innerHTML = `<img src="${esc(enVentana.imagen)}" alt="">`; im.hidden = false; } else { im.hidden = true; }
-      setTimeout(() => { pop.hidden = false; }, 2500);
+      pop.hidden = false;
     };
     pintar();
     proximoCheck.push(pintar);
@@ -572,5 +598,8 @@ setInterval(() => proximoCheck.forEach((fn) => fn()), 60000);
       });
       document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !pop.hidden) pop.querySelector("[data-jpop-close]").click(); });
     }
-  }).catch(() => {});
+  }).catch(() => {
+    if (card) card.innerHTML = `<p class="jn-when">Próximo evento</p><h3 class="jn-topic">No pudimos cargar los eventos.</h3>
+      <p class="jn-by"><a href="${waLink("Hola, quiero saber cuál es el próximo evento de CUMPLIFIX, S.C.")}" target="_blank" rel="noopener">Pregúntanos por WhatsApp</a></p>`;
+  });
 })();
