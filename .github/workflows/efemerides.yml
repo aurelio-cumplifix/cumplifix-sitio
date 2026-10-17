@@ -1,0 +1,46 @@
+name: Efemérides del Cumplimiento
+
+on:
+  schedule:
+    - cron: "17,47 11-23 * * *"   # cada 30 min de 5:17 a 17:47 (hora de la CDMX)
+  workflow_dispatch:              # botón «Run workflow» para publicar al momento
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: contenido
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Pillow (convierte la imagen a JPEG ligero)
+        run: pip install "pillow==11.3.0"
+
+      - name: Leer las ediciones publicadas en el portal y generar las páginas
+        run: python .github/scripts/sync_efemerides.py
+
+      - name: Guardar y publicar si hubo cambios
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard efemerides assets/img/efemerides)" ]; then
+            echo "Sin cambios."
+            exit 0
+          fi
+          git config user.name "cumplifix-contenido"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A efemerides assets/img/efemerides sitemap.xml
+          git commit -m "Efemérides del Cumplimiento actualizadas desde el portal"
+          git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" >/dev/null || echo "La publicación se hará con el siguiente build de Pages."
