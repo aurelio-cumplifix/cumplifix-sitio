@@ -26,6 +26,16 @@ const UTM = (() => {
 })();
 
 /* ---------- Servicio y origen preseleccionados al ir a contacto ---------- */
+const ORIGENES = {
+  hero: "botón principal de la portada",
+  nav: "menú superior",
+  "barra-movil": "barra del celular",
+  servicios: "sección Servicios",
+  ruta: "rutas por situación",
+  pui: "sección PUI",
+  academia: "sección Academia",
+  contacto: "formulario de contacto",
+};
 let origenActual = "contacto";
 document.querySelectorAll('a[href="#contacto"]').forEach((a) => {
   a.addEventListener("click", () => {
@@ -73,17 +83,25 @@ if (form) {
     }
     if (form.botcheck.checked) return;
     const d = Object.fromEntries(new FormData(form));
+    const origen = ORIGENES[origenActual] || origenActual;
+    // Las llaves son los títulos que se ven en el correo de aviso: en español y con acentos
     const payload = {
       access_key: CONFIG.formKey,
-      subject: `[cumplifix.com][${origenActual}] ${d.tema} · ${d.institucion}`,
+      subject: `[cumplifix.com] ${d.tema} · ${d.institucion} (${origen})`,
       from_name: "CUMPLIFIX, S.C. · cumplifix.com",
       replyto: d.correo,
-      nombre: d.nombre, institucion: d.institucion, correo: d.correo, telefono: d.telefono || "—",
-      tema: d.tema, mensaje: d.mensaje || "—",
-      origen: origenActual, ...UTM,
-      aviso_privacidad: "aceptado",
-      finalidad_secundaria: d.no_publicidad ? "NO acepta publicidad (negativa)" : "Sin negativa",
-      sello_temporal: new Date().toISOString(),
+      "Nombre": d.nombre,
+      "Institución": d.institucion,
+      "Correo": d.correo,
+      "Teléfono": d.telefono || "—",
+      "Tema": d.tema,
+      "Mensaje": d.mensaje || "—",
+      "Desde dónde escribió": origen,
+      ...(UTM.utm_source || UTM.utm_medium || UTM.utm_campaign
+        ? { "Campaña": [UTM.utm_source, UTM.utm_medium, UTM.utm_campaign].filter(Boolean).join(" · ") } : {}),
+      "Aviso de privacidad": "Aceptado",
+      "Publicidad (finalidad secundaria)": d.no_publicidad ? "NO acepta: no enviarle publicidad" : "No se negó",
+      "Fecha y hora": new Date().toLocaleString("es-MX", { timeZone: "America/Mexico_City", dateStyle: "long", timeStyle: "short" }) + " (CDMX)",
       botcheck: false,
     };
     btn.disabled = true; status.textContent = "Enviando…";
