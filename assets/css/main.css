@@ -96,7 +96,7 @@ a { color: inherit; text-underline-offset: 0.2em; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 52px; padding: 12px 28px;
-  border-radius: 999px;
+  border: 0; border-radius: 999px;  /* border: 0 → los <button> no traen el borde gris del navegador */
   background: var(--royal); color: #fff;
   font: 600 1.0625rem/1.25 var(--text);
   text-align: center;

@@ -102,7 +102,7 @@ def pagina(titulo, descripcion, canonica, og_imagen, cuerpo, ld_json):
   <script src="/assets/js/legal.js?v=20261008c" defer></script>
   <link rel="preload" href="/assets/fonts/raleway-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/main.css?v=20261015a">
+  <link rel="stylesheet" href="/assets/css/main.css?v=20261016c">
   <link rel="stylesheet" href="/assets/css/efemerides.css?v={VERSION_CSS}">
 </head>
 <body class="svc-page ef-page">
