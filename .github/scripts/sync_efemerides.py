@@ -175,6 +175,16 @@ def nota_html(n):
           </li>"""
 
 
+def medidas(f):
+    """Ancho y alto reales de la imagen publicada (la cuadrada mide 1080 × 1080)."""
+    try:
+        from PIL import Image
+        with Image.open(os.path.join(RAIZ, f"assets/img/efemerides/{f}.jpg")) as im:
+            return im.size
+    except Exception:
+        return (1080, 1350)
+
+
 def fila_agenda(i):
     detalle = f"<span>{e(i.get('detalle'))}</span>" if i.get("detalle") else ""
     return f'<li><span class="ef-cuando">{e(i.get("cuando"))}</span><b>{e(i.get("titulo"))}</b>{detalle}</li>'
@@ -193,7 +203,7 @@ def edicion_html(ed, anterior, siguiente):
           <h1 id="ef-title" class="sp-title">Efemérides del Cumplimiento <span>{e(fecha_larga(f, True))}</span></h1>
           <p class="sp-sub">Lo más importante del sistema financiero mexicano, los vencimientos ante la CONDUSEF y la lectura del equipo de CUMPLIFIX, S.C.</p>
         </div>
-        {f'<figure class="ef-imagen"><img src="{e(img)}" alt="Imagen de las Efemérides del Cumplimiento del {e(fecha_larga(f))}" width="1080" height="1350"></figure>' if img else ""}
+        {f'<figure class="ef-imagen"><img src="{e(img)}" alt="Imagen de las Efemérides del Cumplimiento del {e(fecha_larga(f))}" width="{medidas(f)[0]}" height="{medidas(f)[1]}"></figure>' if img else ""}
       </div>
     </section>""")
 
@@ -321,7 +331,7 @@ def indice_html(ediciones):
           <h1 id="ef-title" class="sp-title">Efemérides del Cumplimiento <span>El sistema financiero mexicano, cada mañana.</span></h1>
           <p class="sp-sub">Noticias de la CONDUSEF, la CNBV, el Banco de México y el sector; vencimientos regulatorios e indicadores del día, con la lectura del equipo de CUMPLIFIX, S.C.</p>
         </div>
-        {f'<figure class="ef-imagen"><a href="/efemerides/{f}/"><img src="{e(img)}" alt="Imagen de las Efemérides del {e(fecha_larga(f))}" width="1080" height="1350"></a></figure>' if img else ""}
+        {f'<figure class="ef-imagen"><a href="/efemerides/{f}/"><img src="{e(img)}" alt="Imagen de las Efemérides del {e(fecha_larga(f))}" width="{medidas(f)[0]}" height="{medidas(f)[1]}"></a></figure>' if img else ""}
       </div>
     </section>
     <section class="sp-sec ef-sec" aria-labelledby="ef-hoy">
