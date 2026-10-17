@@ -3,13 +3,12 @@ const CONFIG = {
   whatsapp: "525571462367",
   correo: "info@cumplifix.com",
   formKey: "386f27b8-8a7b-47e9-a0c4-2b96e7cc329d", // Web3Forms, misma llave que agenda.cumplifix.com
-  waTexto: "Hola, vengo de cumplifix.com y quiero platicar sobre el cumplimiento de mi institución.",
+  waTexto: "Hola, me gustaría platicar con un especialista sobre el cumplimiento de mi institución.",
 };
 
-/* ---------- WhatsApp con mensaje prellenado y origen ---------- */
+/* ---------- WhatsApp con mensaje prellenado (sin etiquetas internas: lo lee la persona) ---------- */
 document.querySelectorAll("[data-wa]").forEach((a) => {
-  const texto = `${CONFIG.waTexto} (origen: ${a.dataset.wa})`;
-  a.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(texto)}`;
+  a.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.waTexto)}`;
   a.target = "_blank";
   a.rel = "noopener";
 });
