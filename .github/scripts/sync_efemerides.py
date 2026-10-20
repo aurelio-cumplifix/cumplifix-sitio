@@ -61,6 +61,29 @@ def fecha_larga(f, con_dia=False):
     return texto + (" · edición de la noche" if f.endswith("-noche") else "")
 
 
+def cuando_evento(f, fecha_texto):
+    """"Hoy", "Mañana", "Este jueves" o "Jueves 22 de octubre" según la fecha del evento y la de la edición."""
+    import datetime
+    hoy = datetime.date.fromisoformat(f[:10])
+    m = re.search(r"(\d{1,2})\s+de\s+([a-záéíóúñ]+)(?:\s+(?:de|del)\s+(\d{4}))?", (fecha_texto or "").lower())
+    if not m or m.group(2) not in MESES:
+        return "Hoy"
+    try:
+        d = datetime.date(int(m.group(3) or hoy.year), MESES.index(m.group(2)) + 1, int(m.group(1)))
+    except ValueError:
+        return "Hoy"
+    if not m.group(3) and d < hoy - datetime.timedelta(days=180):
+        d = d.replace(year=d.year + 1)
+    dias = (d - hoy).days
+    if dias == 0:
+        return "Hoy"
+    if dias == 1:
+        return "Mañana"
+    if 1 < dias < 7:
+        return "Este " + DIAS[d.weekday()]
+    return f"{DIAS[d.weekday()].capitalize()} {d.day} de {MESES[d.month - 1]}"
+
+
 def escribir(ruta, contenido):
     ruta = os.path.join(RAIZ, ruta)
     os.makedirs(os.path.dirname(ruta), exist_ok=True)
@@ -217,7 +240,7 @@ def edicion_html(ed, anterior, siguiente):
           <p class="ef-fuente">{e(dia.get("medio"))}</p></article>""")
     ev = ed.get("evento")
     if ev:
-        destacados.append(f"""<article class="ef-card ef-evento"><h2>Hoy · {e(ev.get("organizador")) or "Evento"}</h2>
+        destacados.append(f"""<article class="ef-card ef-evento"><h2>{e(cuando_evento(f, ev.get("fecha_texto")))} · {e(ev.get("organizador")) or "Evento"}</h2>
           <p class="ef-card-titulo">{e(ev.get("titulo"))}</p>{f'<p>{e(ev.get("bajada"))}</p>' if ev.get("bajada") else ""}
           <p class="ef-fuente">{e(ev.get("fecha_texto"))}{" · " + e(ev.get("hora")) if ev.get("hora") else ""}{" · " + e(ev.get("expositor")) if ev.get("expositor") else ""}</p>
           {f'<a class="btn btn-sm" href="{e(liga(ev.get("liga")))}" target="_blank" rel="noopener">Regístrate</a>' if liga(ev.get("liga")) else ""}</article>""")
