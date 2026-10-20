@@ -24,7 +24,7 @@ SITIO = "https://cumplifix.com"
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre",
          "noviembre", "diciembre"]
 DIAS = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
-FECHA_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+FECHA_RE = re.compile(r"^\d{4}-\d{2}-\d{2}(-noche)?$")  # la edición de la noche: "2026-10-19-noche"
 SECCIONES = [("radar", "Radar del cumplimiento", "Sistema financiero y regulación"),
              ("finanzas", "Finanzas personales", "Educación financiera"),
              ("dof", "Diario Oficial", "Publicaciones del día"),
@@ -53,10 +53,12 @@ def bajar(url, limite=6_000_000):
 
 
 def fecha_larga(f, con_dia=False):
+    """f es la clave de la edición: "2026-10-19" (mañana) o "2026-10-19-noche"."""
     import datetime
-    d = datetime.date.fromisoformat(f)
+    d = datetime.date.fromisoformat(f[:10])
     texto = f"{d.day} de {MESES[d.month - 1]} de {d.year}"
-    return (DIAS[d.weekday()].capitalize() + " " + texto) if con_dia else texto
+    texto = (DIAS[d.weekday()].capitalize() + " " + texto) if con_dia else texto
+    return texto + (" · edición de la noche" if f.endswith("-noche") else "")
 
 
 def escribir(ruta, contenido):
@@ -270,7 +272,7 @@ def edicion_html(ed, anterior, siguiente):
     hi = ed.get("historia")
     if hi:
         import datetime
-        d = datetime.date.fromisoformat(f)
+        d = datetime.date.fromisoformat(f[:10])
         cuando = f"{d.day} de {MESES[d.month - 1]}" + (f" de {e(hi.get('anio'))}" if hi.get("anio") else "")
         partes.append(f"""    <section class="sp-sec ef-sec" aria-labelledby="ef-hist">
       <div class="sp-wrap sp-narrow">
@@ -300,7 +302,7 @@ def edicion_html(ed, anterior, siguiente):
     og = f"{SITIO}{img}" if img else f"{SITIO}/assets/img/og-cumplifix.jpg"
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "Article", "headline": titulo, "description": descripcion, "inLanguage": "es-MX",
-         "datePublished": f, "dateModified": f, "author": organizacion(), "publisher": organizacion(),
+         "datePublished": f[:10], "dateModified": f[:10], "author": organizacion(), "publisher": organizacion(),
          "mainEntityOfPage": canonica, "image": og},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Inicio", "item": f"{SITIO}/"},
@@ -388,8 +390,8 @@ def actualizar_sitemap(ediciones):
     ruta = os.path.join(RAIZ, "sitemap.xml")
     with open(ruta, encoding="utf-8") as f:
         texto = f.read()
-    bloque = "  <!-- efemerides -->\n" + f"  <url><loc>{SITIO}/efemerides/</loc><lastmod>{ediciones[0]['fecha']}</lastmod></url>\n" + "".join(
-        f"  <url><loc>{SITIO}/efemerides/{ed['fecha']}/</loc><lastmod>{ed['fecha']}</lastmod></url>\n" for ed in ediciones
+    bloque = "  <!-- efemerides -->\n" + f"  <url><loc>{SITIO}/efemerides/</loc><lastmod>{ediciones[0]['fecha'][:10]}</lastmod></url>\n" + "".join(
+        f"  <url><loc>{SITIO}/efemerides/{ed['fecha']}/</loc><lastmod>{ed['fecha'][:10]}</lastmod></url>\n" for ed in ediciones
     ) + "  <!-- /efemerides -->\n"
     if "<!-- efemerides -->" in texto:
         texto = re.sub(r"  <!-- efemerides -->\n.*?  <!-- /efemerides -->\n", lambda _: bloque, texto, flags=re.S)
@@ -404,7 +406,9 @@ def main():
     except Exception as err:
         print(f"No se pudo leer el portal ({err}); no se cambia nada.")
         return 0
-    ediciones = sorted((x for x in datos.get("ediciones", []) if FECHA_RE.match(str(x.get("fecha", "")))),
+    for x in datos.get("ediciones", []):  # desde oct-2026 hay edición de la mañana y de la noche
+        x["fecha"] = str(x.get("clave") or x.get("fecha", ""))
+    ediciones = sorted((x for x in datos.get("ediciones", []) if FECHA_RE.match(x["fecha"])),
                        key=lambda x: x["fecha"], reverse=True)
     if not ediciones:
         print("No hay ediciones publicadas; no se cambia nada.")
